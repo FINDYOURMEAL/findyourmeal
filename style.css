@@ -1,0 +1,3969 @@
+/* ===== GLOBAL ===== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== HEADER ===== */
+/* ===== HEADER ===== */
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;   /* centers logo + nav vertically */
+  background: #222;
+  color: white;
+  padding: 0 20px;
+  height: 50px;          /* reduced height */
+  line-height: 60px;     /* keep items centered */
+}
+
+/* Logo */
+header .logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: white;
+  display: flex;
+  align-items: center;       /* keeps text centered */
+  justify-content: flex-start;
+  height: 100%;
+  padding-top: 2px;          /* 🔑 adjust this if still slightly off */
+}
+
+
+
+header .logo span {
+  color: #28a745;        /* green highlight */
+}
+
+/* Navigation */
+header nav {
+  display: flex;
+  align-items: center;   /* keeps nav items in line */
+}
+
+header nav a,
+header nav button {
+  margin-left: 15px;
+  text-decoration: none;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+/* Navigation links */
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav a,
+header nav button {
+  margin-left: 15px;
+  text-decoration: none;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+/* Nav Links & Buttons */
+nav a, nav button {
+  margin-left: 15px;
+  text-decoration: none;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ===== INTRO SECTION (not used now, replaced with hero) ===== */
+.intro {
+  text-align: center;
+  padding: 50px;
+}
+
+/* ===== GENERIC BUTTON ===== */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: green;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* ===== PLANS ===== */
+.plans {
+  padding: 30px;
+  text-align: center;
+}
+
+.plan {
+  background: #f4f4f4;
+  padding: 20px;
+  margin: 20px auto;
+  width: 300px;
+  border-radius: 10px;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  height: 100vh; /* full screen */
+  background: url("https://images.unsplash.com/photo-1579758629938-03607ccdbaba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.55); /* dark overlay */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+/* Headline */
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero h1 span {
+  color: #28a745; /* green highlight */
+}
+
+/* Slogan */
+.hero p {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 35px;
+  opacity: 0.9;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+}
+
+/* Hero Button */
+.hero .btn {
+  padding: 14px 35px;
+  font-size: 18px;
+  background: #28a745;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.hero .btn:hover {
+  background: #218838;
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+/* ===== Auth Page ===== */
+.auth-wrap {
+  min-height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+  padding: 40px 16px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0b3d2e 100%);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  padding: 28px;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 8px;
+  background: #f1f5f9;
+  padding: 6px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 12px 16px;
+  border: 0;
+  background: transparent;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.auth-tab.active { 
+  background: #ffffff; 
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08); 
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 650px;   /* ✅ wider forms */
+  margin: 0 auto;     /* ✅ center in page */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-form.visible { display: block; }
+
+.field { display: grid; gap: 8px; margin-bottom: 14px; }
+.field label { font-weight: 600; font-size: 0.95rem; color: #111827; }
+.field input, .field select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  outline: none;
+}
+.field input:focus, .field select:focus { 
+  border-color: #28a745; 
+  box-shadow: 0 0 0 3px rgba(40,167,69,0.15); 
+}
+
+.grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+.check { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  margin: 10px 0 18px; 
+  font-size: 0.9rem; 
+}
+.check input { width: 18px; height: 18px; }
+
+/* Primary Button (used in auth + hero) */
+.btn-primary {
+  padding: 14px 35px;        /* ✅ same size as hero button */
+  border: 0;
+  border-radius: 12px;
+  background: #28a745;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 18px rgba(40,167,69,.35);
+  text-decoration: none;   /* 🚀 remove underline */
+  display: inline-block;   /* natural button width */
+}
+
+.btn-primary:hover { 
+  transform: translateY(-1px); 
+  text-decoration: none;   /* keep underline removed */
+  background: #218838;
+}
+
+.btn-primary:active { transform: translateY(0); }
+
+.form-note { margin-top: 12px; font-size: 0.92rem; color: #475569; }
+.form-note a { color: #28a745; text-decoration: none; font-weight: 600; }
+
+.form-msg { margin-top: 10px; font-size: 0.9rem; }
+.form-msg.error { color: #b91c1c; }
+.form-msg.success { color: #15803d; }
+
+/* ===== ACCOUNT MENU ===== */
+.account-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.account-menu button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#auth-btn {
+  position: relative;
+  z-index: 200; /* makes sure it's clickable above other elements */
+}
+
+
+.dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 100;
+}
+
+.dropdown a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.dropdown.hidden {
+  display: none !important;
+}
+
+
+.dropdown a:hover {
+  background: #f5f5f5;
+}
+
+.hidden { display: none; }
+
+/* ===== FOOTER ===== */
+footer .footer-logo img {
+  height: 50px;   /* larger for footer */
+  width: auto;
+  display: block;
+  margin: 0 auto 8px;
+}
+/* ===== ABOUT SECTION ===== */
+.about {
+  min-height: 100vh;         /* full screen */
+  width: 100%;
+  background: linear-gradient(135deg, #f0fff4 0%, #d1fae5 50%, #a7f3d0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;                /* remove unwanted padding */
+  margin: 0;                 /* remove margin */
+  box-sizing: border-box;
+}
+
+.about-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 320px;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.about-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.about-text ul li {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.about-text h3 {
+  margin-top: 20px;
+  font-size: 1.8rem;
+  color: #222;
+}
+
+.about-text h3 span {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 320px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* ===== PRICING SECTION ===== */
+.about-pricing {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.about-pricing h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.pricing-intro {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: #444;
+}
+
+.pricing-cards {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pricing-cards .card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.pricing-cards .card:hover {
+  transform: translateY(-8px);
+}
+
+.pricing-cards .card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.pricing-cards .card .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745;
+  margin-top: 15px;
+}
+footer {
+  background: #222;
+  color: white;
+  text-align: center;   /* ✅ centers all text */
+  padding: 25px 20px;
+}
+
+footer .footer-logo {
+  margin-bottom: 12px;
+}
+
+footer .footer-logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+  margin: 0 auto;       /* ✅ centers logo image */
+}
+/* ===== FORCE-CENTER FEATURES SECTION =====
+   Add this at the very end of style.css so it overrides previous rules.
+*/
+
+.plans, .features {
+  display: flex;
+  flex-direction: column;     /* stack heading, text, cards vertically */
+  align-items: center;        /* center everything horizontally */
+  justify-content: flex-start;
+  text-align: center;         /* ensures inline text is centered */
+  padding: 60px 20px;
+  gap: 24px;
+}
+
+/* center heading & description and constrain width for readability */
+.plans h1, .plans h2, .plans p,
+.features h1, .features h2, .features p {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto 18px !important;
+  text-align: center !important;
+  line-height: 1.45;
+}
+
+/* If you have a wrapper that contains the feature cards, center that wrapper */
+.plans .plan-grid, .features .feature-grid, .pricing-cards {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center !important; /* center cards in a row */
+  align-items: flex-start;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Style for individual cards so text within them is centered */
+.plans .plan, .features .feature, .plan-card, .card {
+  text-align: center !important;
+  margin: 8px;
+}
+
+/* Defensive: if previous rules used float/inline-block, force block layout */
+.plans .plan, .features .feature {
+  display: block !important;
+}
+
+/* Mobile tweak: keep them stacked nicely on small screens */
+@media (max-width: 768px) {
+  .plans .plan-grid, .features .feature-grid, .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .plans, .features {
+    padding: 40px 16px;
+  }
+}
+/* ===== SINGLE PLAN STYLE ===== */
+.single-plan {
+  background: #f4f4f4;
+  padding: 50px 30px;
+  margin: 40px auto;
+  max-width: 600px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.single-plan h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.single-plan p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 25px;
+}
+
+.single-plan span {
+  font-size: 2rem;
+  color: #e63946; /* Highlight price */
+}
+
+.single-plan .btn {
+  background: #28a745;
+  font-size: 1.2rem;
+  padding: 14px 35px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.single-plan .btn:hover {
+  background: #218838;
+  transform: translateY(-3px);
+}
+/* ===== SINGLE BIG PLAN CARD ===== */
+.single-plan {
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  padding: 60px 40px;
+  margin: 60px auto;
+  max-width: 700px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.single-plan:hover {
+  transform: translateY(-8px); /* lift effect */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.single-plan h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.single-plan .price {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.single-plan .price span {
+  font-size: 2.5rem;
+  color: #28a745; /* highlight ₹59 */
+  font-weight: 900;
+}
+
+.single-plan .btn {
+  background: #28a745;
+  font-size: 1.2rem;
+  padding: 14px 35px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 6px 18px rgba(40, 167, 69, 0.3);
+}
+
+.single-plan .btn:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+/* ===== PROFESSIONAL OFFER CARD ===== */
+.offer-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffffff, #f7f9fc);
+  padding: 40px;
+  margin: 60px auto;
+  max-width: 1000px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  gap: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+.offer-image img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.offer-content {
+  flex: 1;
+  text-align: left;
+}
+
+.offer-content h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.offer-content .price {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.offer-content .price span {
+  font-size: 2.4rem;
+  color: #28a745;
+  font-weight: 900;
+}
+
+.offer-content .desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.offer-content .btn {
+  background: #28a745;
+  font-size: 1.2rem;
+  padding: 14px 35px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 6px 18px rgba(40, 167, 69, 0.3);
+}
+
+.offer-content .btn:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .offer-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .offer-content {
+    text-align: center;
+  }
+
+  .offer-image img {
+    max-width: 100%;
+  }
+}
+footer .footer-logo img {
+  height: 50px; 
+  width: auto;
+  display: block;
+  margin: 0 auto 8px;
+  filter: brightness(0) invert(1); /* ✅ makes footer logo white */
+}
+/* ===== Pricing Section ===== */
+.pricing-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f9f9f9, #eef2f3);
+}
+
+.pricing-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.pricing-card {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.pricing-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #28a745;
+}
+
+.pricing-card .price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.pricing-card ul li {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.pricing-card .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 35px;
+  font-size: 18px;
+  background: #28a745;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.pricing-card .btn:hover {
+  background: #218838;
+  transform: translateY(-3px);
+}
+/* ===== Section Heading Styling ===== */
+.section-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #222;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.section-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #28a745;   /* green accent underline */
+  border-radius: 2px;
+}
+/* ===== Page Title (Plans Page) ===== */
+.page-title {
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  margin: 50px 0 40px;
+  color: #28a745;  /* green brand color */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+.page-title::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 5px;
+  background: #28a745;
+  border-radius: 3px;
+}
+/* ===== Diet Plans Page Background ===== */
+body.plans-page {
+  background: url("https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1920&q=80") 
+              no-repeat center center/cover;
+  position: relative;
+  min-height: 100vh;
+  color: white;
+  padding-top: 70px;  /* same as header height */
+}
+
+body.plans-page::before {
+  content: "";
+  position: fixed;   /* cover full viewport */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55);
+  z-index: -1;       /* always behind header and content */
+  pointer-events: none; /* overlay won’t block clicks */
+}
+
+
+
+body.plans-page * {
+  position: relative;
+  z-index: 1; /* ensures content stays above overlay */
+}
+.custom-plan {
+  min-height: 100vh;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #f9f9f9, #e9f7ef);
+  text-align: center;
+}
+
+.custom-plan h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.custom-plan p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.custom-plan form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.custom-plan .field {
+  margin-bottom: 20px;
+}
+
+.custom-plan label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.custom-plan select,
+.custom-plan textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.custom-plan button {
+  display: inline-block;
+  margin-top: 15px;
+}
+/* === FIX AUTH PAGE STYLING FOR NEW HTML === */
+.auth-container {
+  min-height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+  padding: 40px 16px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0b3d2e 100%);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.auth-box {
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  padding: 28px;
+}
+body.auth-body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+.auth-box {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+  padding: 30px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.logo span { color: #27ae60; }
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 8px;
+}
+.tab-btn.active {
+  background: #27ae60;
+  color: #fff;
+}
+
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+.form-group label {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-primary:hover {
+  background: #219150;
+}
+.auth-container {
+  max-width: 700px;   /* wider card */
+  margin: 50px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+/* Sliding tab container */
+.auth-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Each button inside */
+.auth-tabs button {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #333;  /* text visible on inactive side */
+  position: relative;
+  z-index: 2; /* keeps text above slider */
+}
+
+/* Active sliding highlight */
+.auth-tabs button.active {
+  color: #fff;  /* ✅ text visible in green section */
+}
+
+/* Sliding background */
+.auth-tabs::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;  /* covers one button */
+  height: 100%;
+  background: #27ae60;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+/* Move slider to the right when signup is active */
+.auth-tabs.signup-active::before {
+  transform: translateX(100%);
+}
+
+
+.auth-tabs button.active {
+  background: #27ae60;
+  color: #fff;
+}
+
+form {
+  display: none;
+}
+
+form.visible {
+  display: block;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-group input {
+  width: 90%;          /* ✅ broader fields */
+  max-width: 600px;    /* ✅ increase max width */
+  margin: 10px auto;   /* ✅ center horizontally */
+  display: block;
+  padding: 14px 18px;  /* ✅ more padding */
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+
+.btn {
+  width: 100%;
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #219150;
+}
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  background: #fff;
+}
+
+.form-group select:focus {
+  border-color: #27ae60;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(39,174,96,0.15);
+}
+/* ---------- Professional Sliding Tabs ---------- */
+.auth-tabs {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  background: #f1f5f9;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto 25px;   /* centers the box */
+  height: 50px;
+  width: 420px;          /* ⬅️ broader than before */
+  max-width: 90%;        /* responsive for small screens */
+}
+
+
+
+.tab-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 600px;   /* ✅ broader sliding button */
+  background: #f3f4f6;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+
+.tab-container button {
+  flex: 1;
+  padding: 16px 0;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.tab-container button.active {
+  color: #fff;
+}
+
+.tab-container .tab-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #27ae60;
+  border-radius: 14px;       /* ✅ matches container */
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+/* === Compact, centered CTAs (Get Started buttons) === */
+#get-started-btn,
+#offer-btn {
+  display: block !important;
+  width: fit-content !important;
+  margin: 14px auto !important;       /* center horizontally */
+  padding: 10px 22px !important;      /* smaller size */
+  font-size: 15px !important;
+  border-radius: 8px !important;
+}
+
+/* In case those buttons also use .btn in hero/offer sections, keep them small */
+.hero .btn,
+.offer-content .btn {
+  padding: 10px 22px !important;
+  font-size: 15px !important;
+  border-radius: 8px !important;
+}
+/* === Make Sign In & Create Account submit buttons smaller + centered === */
+.auth-container form button[type="submit"],
+.auth-container form .btn,
+.auth-container form .btn-primary {
+  display: block !important;
+  width: fit-content !important;   /* shrink to text */
+  margin: 12px auto !important;    /* center horizontally */
+  padding: 10px 22px !important;   /* smaller size */
+  font-size: 15px !important;
+  border-radius: 8px !important;
+}
+/* === Make Buy Now buttons smaller like Get Started === */
+.plans .btn,
+.plan .btn,
+.pricing-card .btn,
+.single-plan .btn,
+.offer-content .btn {
+  display: inline-block !important;
+  padding: 10px 22px !important;   /* smaller height/width */
+  font-size: 15px !important;
+  border-radius: 8px !important;
+  margin: 12px auto !important;
+  width: fit-content !important;   /* shrink to text */
+}
+/* ===== HEADER FIX: keep logo vertically centered ===== */
+#fym {
+  height: 56px !important;                 /* set a fixed, slim header height */
+  display: flex !important;
+  align-items: center !important;          /* vertical centering for children */
+  justify-content: space-between !important;
+  padding: 0 20px !important;              /* equal top/bottom padding */
+}
+
+#fym .logo {
+  display: flex !important;
+  align-items: center !important;          /* center the text inside .logo */
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;               /* prevent text from stretching vertically */
+  /* tiny optical nudge; adjust +/– if needed or remove */
+  transform: translateY(1px);
+}
+
+#fym nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+#fym nav a,
+#fym nav button {
+  display: inline-flex !important;         /* make links/buttons align like flex items */
+  align-items: center !important;
+  height: 36px !important;                 /* visually consistent touch target */
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 10px !important;
+  background: none !important;
+  border: 0 !important;
+  color: #fff !important;
+  font-size: 16px!important;
+}
+/* ===== GLOBAL HEADER (same everywhere) ===== */
+header.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  color: white;
+  padding: 12px 30px; /* same padding on all pages */
+  height: 56px;       /* fixed height for consistency */
+  box-sizing: border-box;
+}
+
+header.site-header .logo {
+  display: flex !important;
+  align-items: center !important;          /* center the text inside .logo */
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;               /* prevent text from stretching vertically */
+  /* tiny optical nudge; adjust +/– if needed or remove */
+  transform: translateY(1px);
+}
+
+header.site-header .logo span {
+  color: #28a745; /* green highlight */
+}
+
+header.site-header nav{
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+header.site-header nav a,
+header.site-header nav button {
+  display: inline-flex !important;         /* make links/buttons align like flex items */
+  align-items: center !important;
+  height: 36px !important;                 /* visually consistent touch target */
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 10px !important;
+  background: none !important;
+  border: 0 !important;
+  color: #fff !important;
+  font-size: 16px!important;
+}
+
+/* Fix header overlay issue on Plans page */
+header {
+  position: relative;
+  z-index: 1000;
+}
+
+body.plans-page::before {
+  z-index: -1;
+}
+
+#auth-btn {
+  position: relative;
+  z-index: 2000;
+}
+/* ===== FIX HEADER CLICK ISSUE ===== */
+header {
+  position: relative;  /* make header its own layer */
+  z-index: 9999;       /* keep header above everything */
+}
+.tab-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.tab-container button {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: #333;
+  z-index: 2; /* keeps text above slider */
+  position: relative;
+  cursor: pointer;
+}
+
+.tab-container .tab-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #27ae60;
+  border-radius: 12px;
+  transition: left 0.2s ease;
+  z-index: 1;
+}
+
+.tab-container button.active {
+  color: #fff; /* white text on green */
+}
+
+.auth-tabs.signup-active .tab-slider {
+  left: 50%; /* move slider to Create Account */
+}
+/* Keep tab text always visible above green slider */
+.auth-tabs .auth-tab,
+.tab-container button {
+  position: relative;
+  z-index: 2 !important;   /* ⬅️ ensures text stays on top of slider */
+  color: #111;             /* default text color */
+}
+
+.auth-tabs .auth-tab.active,
+.tab-container button.active {
+  color: #fff !important;  /* white text on the green slider */
+}
+
+/* Slider stays under the text */
+.auth-tabs .tab-slider,
+.auth-tabs .slider,
+.tab-container .tab-slider {
+  z-index: 1 !important;   /* ⬅️ slider is behind text */
+}
+/* --- Account dropdown: force styles --- */
+header nav .account-menu #account-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  min-width: 180px;
+  padding: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  z-index: 10000;
+}
+
+header nav .account-menu #account-dropdown.hidden {
+  display: none;
+}
+
+header nav .account-menu #account-dropdown a {
+  display: block;
+  padding: 10px 14px;
+  color: #111 !important;       /* force black text */
+  background: #fff !important;  /* force white background */
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+header nav .account-menu #account-dropdown a:hover {
+  background: #f3f4f6 !important;
+  color: #000 !important;
+}
+/* ===== Custom Plan Page ===== */
+body.custom-plan-page {
+  background: #f5f6f7;
+}
+
+.cp-wrap {
+  min-height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+  padding: 40px 16px;
+}
+
+.cp-card {
+  width: 100%;
+  max-width: 640px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  padding: 28px;
+}
+
+.cp-title {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 4px 0 18px;
+  color: #111827;
+}
+
+.cp-field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.cp-field label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+#cp-requirement {
+  width: 100%;
+  min-height: 130px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  outline: none;
+  resize: vertical;
+}
+#cp-requirement:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40,167,69,.15);
+}
+
+.cp-btn {
+  width: 100%;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #28a745;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 18px rgba(40,167,69,.3);
+}
+.cp-btn:hover { transform: translateY(-1px); background: #218838; }
+
+.cp-msg { margin-top: 12px; font-size: 0.95rem; }
+.cp-msg.success { color: #15803d; }
+.cp-msg.error   { color: #b91c1c; }
+
+/* Ensure dropdown sits above everything */
+#account-dropdown.dropdown {
+  z-index: 1000;
+}
+/* ===== Custom Plan Page ===== */
+body.custom-plan-page {
+  background: #f5f6f7;
+}
+
+.cp-wrap {
+  min-height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+  padding: 40px 16px;
+}
+
+.cp-card {
+  width: 100%;
+  max-width: 640px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  padding: 28px;
+}
+
+.cp-title {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 4px 0 18px;
+  color: #111827;
+}
+
+.cp-field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.cp-field label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+#cp-requirement {
+  width: 100%;
+  min-height: 130px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  outline: none;
+  resize: vertical;
+}
+#cp-requirement:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40,167,69,.15);
+}
+
+.cp-btn {
+  width: 100%;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #28a745;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 18px rgba(40,167,69,.3);
+}
+.cp-btn:hover { transform: translateY(-1px); background: #218838; }
+
+.cp-msg { margin-top: 12px; font-size: 0.95rem; }
+.cp-msg.success { color: #15803d; }
+.cp-msg.error   { color: #b91c1c; }
+/* ===== CONTACT PAGE ===== */
+.contact-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f9f9f9, #eef2f3);
+  text-align: center;
+}
+
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.contact-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+}
+
+.contact-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #28a745;
+}
+
+.contact-card p a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.contact-card p a:hover {
+  color: #28a745;
+}
+/* Prevents accidental overflow on mobile */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+/* Make images, videos, forms scale to screen */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Make containers shrink on mobile */
+.container, .auth-container, .auth-card, .auth-box {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+/* === Mobile hamburger (non-desktop safe) === */
+.hamburger {
+  display: none;              /* hidden on desktop */
+  border: 0;
+  background: transparent;
+  padding: 8px;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px 0;
+  background: #111;           /* match your header text color */
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+/* Mobile-only rules */
+@media (max-width: 768px) {
+  .hamburger { display: inline-block; }
+
+  /* Hide nav by default on phones */
+  .site-header #nav-menu {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    border-top: 1px solid #eee;
+    z-index: 1000;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0;
+  }
+
+  /* Show when toggled */
+  .site-header #nav-menu.open {
+    display: flex !important;
+  }
+
+  /* Full-width touch targets */
+  .site-header #nav-menu a,
+  .site-header #nav-menu button,
+  .site-header #nav-menu .account-menu {
+    width: 100%;
+    text-align: center;
+    padding: 12px 16px;
+    box-sizing: border-box;
+  }
+}
+/* Hide normal nav on small screens */
+@media (max-width: 768px) {
+  .site-header nav {
+    display: none;
+  }
+}
+
+/* Show normal nav on larger screens */
+@media (min-width: 769px) {
+  #fym-hamburger {
+    display: none; /* hide hamburger on desktop */
+  }
+}
+/* Default nav visible on desktop */
+#fym-nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* Hide hamburger on desktop */
+#fym-hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  #fym-hamburger {
+    display: block;
+  }
+
+  #fym-nav {
+    display: none; /* hide nav by default */
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 15px;
+  }
+
+  #fym-nav.show {
+    display: flex; /* show nav when toggled */
+  }
+}
+/* -----------------------------
+   Mobile: hide normal nav, show hamburger
+   Paste this at the BOTTOM of style.css
+   ----------------------------- */
+@media (max-width: 768px) {
+  /* Force-hide all header nav variants */
+  .site-header nav,
+  header nav,
+  .site-header > nav,
+  #fym-nav,
+  #nav-menu,
+  nav#fym-nav,
+  nav#nav-menu {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Ensure hamburger is visible on mobile */
+  #fym-hamburger,
+  .hamburger,
+  #menu-toggle {
+    display: block !important;
+    z-index: 9999;
+  }
+
+  /* When header has class mobile-open OR nav has .show/open, reveal the nav */
+  .site-header.mobile-open nav,
+  header.mobile-open nav,
+  .site-header nav.show,
+  #fym-nav.show,
+  #nav-menu.open,
+  nav#fym-nav.show,
+  nav#nav-menu.open {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    overflow: visible !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #ffffff !important;
+    z-index: 9998 !important;
+    padding: 8px 0 !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08) !important;
+  }
+
+  /* Make menu items full width and visible */
+  .site-header nav a,
+  .site-header nav button,
+  #fym-nav a,
+  #fym-nav button,
+  #nav-menu a,
+  #nav-menu button {
+    display: block !important;
+    width: 100% !important;
+    padding: 12px 16px !important;
+    text-align: center !important;
+    color: #111 !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    border: none !important;
+    box-sizing: border-box !important;
+  }
+}
+@media (max-width: 768px) {
+  .site-header nav { 
+    display: none !important;
+  }
+  #fym-hamburger { 
+    display: block !important; 
+  }
+  .site-header.mobile-open nav {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 999;
+  }
+  .site-header nav a,
+  .site-header nav button {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.site-header {
+  display: flex;               /* use flex layout */
+  align-items: center;         /* vertically center items */
+  justify-content: space-between; /* logo on left, nav/hamburger on right */
+  padding: 10px 20px;
+  position: relative;
+  background-color: #fff;      /* or your header color */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+/* Hide hamburger on desktop, show on mobile */
+#fym-hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none; /* hide normal nav on mobile */
+    position: absolute;
+    top: 60px;   /* below header */
+    right: 0;
+    width: 200px; /* width of mobile menu */
+    background: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    flex-direction: column;
+  }
+
+  nav.mobile-open {
+    display: flex; /* show mobile menu when hamburger clicked */
+  }
+
+  #fym-hamburger {
+    display: block; /* show hamburger on mobile */
+  }
+
+  nav a {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+}
+#fym-hamburger {
+  font-size: 24px !important;   /* make sure size is applied */
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  color: white !important;      /* <-- force white */
+  z-index: 1000 !important;
+  display: block !important;    /* show on mobile */
+  position: relative;           /* ensure proper stacking */
+}
+/* Hamburger spans (the three lines) */
+.hamburger span {
+  display: block;
+  height: 3px;           /* thickness of the lines */
+  width: 25px;           /* length of the lines */
+  background-color: white; /* <-- this makes lines white */
+  margin: 4px 0;         /* spacing between lines */
+  border-radius: 2px;    /* optional: rounded edges */
+}
+/* Force Sign In / username button in mobile menu to align left */
+#fym-mobile-menu button {
+  text-align: left !important;
+  display: block !important;
+  width: 100% !important;
+  padding: 12px 20px !important;
+  margin: 0 !important;
+}
+#fym-mobile-menu button {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  font-family: inherit !important;
+  line-height: 1.5 !important;
+  color: #111 !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 15px 25px !important;
+  width: 100% !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+}
+/* ===== GLOBAL ===== */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== HEADER ===== */
+/* ===== HEADER ===== */
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;   /* centers logo + nav vertically */
+  background: #222;
+  color: white;
+  padding: 0 20px;
+  height: 50px;          /* reduced height */
+  line-height: 60px;     /* keep items centered */
+}
+
+/* Logo */
+header .logo {
+  font-size: 26px;
+  font-weight: 800;
+  color: white;
+  display: flex;
+  align-items: center;       /* keeps text centered */
+  justify-content: flex-start;
+  height: 100%;
+  padding-top: 2px;          /* 🔑 adjust this if still slightly off */
+}
+
+
+
+header .logo span {
+  color: #28a745;        /* green highlight */
+}
+
+/* Navigation */
+header nav {
+  display: flex;
+  align-items: center;   /* keeps nav items in line */
+}
+
+header nav a,
+header nav button {
+  margin-left: 15px;
+  text-decoration: none;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+/* Navigation links */
+header nav {
+  display: flex;
+  align-items: center;
+}
+
+header nav a,
+header nav button {
+  margin-left: 15px;
+  text-decoration: none;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+/* Nav Links & Buttons */
+nav a, nav button {
+  margin-left: 15px;
+  text-decoration: none;
+  color: white;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* ===== INTRO SECTION (not used now, replaced with hero) ===== */
+.intro {
+  text-align: center;
+  padding: 50px;
+}
+
+/* ===== GENERIC BUTTON ===== */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: green;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+/* ===== PLANS ===== */
+.plans {
+  padding: 30px;
+  text-align: center;
+}
+
+.plan {
+  background: #f4f4f4;
+  padding: 20px;
+  margin: 20px auto;
+  width: 300px;
+  border-radius: 10px;
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  height: 100vh; /* full screen */
+  background: url("https://images.unsplash.com/photo-1579758629938-03607ccdbaba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  padding: 0 20px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.55); /* dark overlay */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+/* Headline */
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero h1 span {
+  color: #28a745; /* green highlight */
+}
+
+/* Slogan */
+.hero p {
+  font-size: 1.3rem;
+  font-weight: 400;
+  margin-bottom: 35px;
+  opacity: 0.9;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+}
+
+/* Hero Button */
+.hero .btn {
+  padding: 14px 35px;
+  font-size: 18px;
+  background: #28a745;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.hero .btn:hover {
+  background: #218838;
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+/* ===== Auth Page ===== */
+.auth-wrap {
+  min-height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+  padding: 40px 16px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0b3d2e 100%);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  padding: 28px;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 8px;
+  background: #f1f5f9;
+  padding: 6px;
+  border-radius: 12px;
+  margin-bottom: 18px;
+}
+
+.auth-tab {
+  flex: 1;
+  padding: 12px 16px;
+  border: 0;
+  background: transparent;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.auth-tab.active { 
+  background: #ffffff; 
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08); 
+}
+
+.auth-form {
+  width: 100%;
+  max-width: 650px;   /* ✅ wider forms */
+  margin: 0 auto;     /* ✅ center in page */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.auth-form.visible { display: block; }
+
+.field { display: grid; gap: 8px; margin-bottom: 14px; }
+.field label { font-weight: 600; font-size: 0.95rem; color: #111827; }
+.field input, .field select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 0.95rem;
+  outline: none;
+}
+.field input:focus, .field select:focus { 
+  border-color: #28a745; 
+  box-shadow: 0 0 0 3px rgba(40,167,69,0.15); 
+}
+
+.grid { display: grid; gap: 14px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .grid { grid-template-columns: 1fr 1fr; } }
+
+.check { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+  margin: 10px 0 18px; 
+  font-size: 0.9rem; 
+}
+.check input { width: 18px; height: 18px; }
+
+/* Primary Button (used in auth + hero) */
+.btn-primary {
+  padding: 14px 35px;        /* ✅ same size as hero button */
+  border: 0;
+  border-radius: 12px;
+  background: #28a745;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 18px rgba(40,167,69,.35);
+  text-decoration: none;   /* 🚀 remove underline */
+  display: inline-block;   /* natural button width */
+}
+
+.btn-primary:hover { 
+  transform: translateY(-1px); 
+  text-decoration: none;   /* keep underline removed */
+  background: #218838;
+}
+
+.btn-primary:active { transform: translateY(0); }
+
+.form-note { margin-top: 12px; font-size: 0.92rem; color: #475569; }
+.form-note a { color: #28a745; text-decoration: none; font-weight: 600; }
+
+.form-msg { margin-top: 10px; font-size: 0.9rem; }
+.form-msg.error { color: #b91c1c; }
+.form-msg.success { color: #15803d; }
+
+/* ===== ACCOUNT MENU ===== */
+.account-menu {
+  position: relative;
+  display: inline-block;
+}
+
+.account-menu button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#auth-btn {
+  position: relative;
+  z-index: 200; /* makes sure it's clickable above other elements */
+}
+
+
+.dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  z-index: 100;
+}
+
+.dropdown a {
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.95rem;
+}
+
+.dropdown.hidden {
+  display: none !important;
+}
+
+
+.dropdown a:hover {
+  background: #f5f5f5;
+}
+
+.hidden { display: none; }
+
+/* ===== FOOTER ===== */
+footer .footer-logo img {
+  height: 50px;   /* larger for footer */
+  width: auto;
+  display: block;
+  margin: 0 auto 8px;
+}
+/* ===== ABOUT SECTION ===== */
+.about {
+  min-height: 100vh;         /* full screen */
+  width: 100%;
+  background: linear-gradient(135deg, #f0fff4 0%, #d1fae5 50%, #a7f3d0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;                /* remove unwanted padding */
+  margin: 0;                 /* remove margin */
+  box-sizing: border-box;
+}
+
+.about-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 320px;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  color: #28a745;
+  margin-bottom: 20px;
+}
+
+.about-text p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.about-text ul {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.about-text ul li {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #111;
+}
+
+.about-text h3 {
+  margin-top: 20px;
+  font-size: 1.8rem;
+  color: #222;
+}
+
+.about-text h3 span {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 320px;
+  text-align: center;
+}
+
+.about-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+/* ===== PRICING SECTION ===== */
+.about-pricing {
+  padding: 80px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.about-pricing h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+}
+
+.pricing-intro {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 50px;
+  color: #444;
+}
+
+.pricing-cards {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.pricing-cards .card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+.pricing-cards .card:hover {
+  transform: translateY(-8px);
+}
+
+.pricing-cards .card h3 {
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.pricing-cards .card .price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745;
+  margin-top: 15px;
+}
+footer {
+  background: #222;
+  color: white;
+  text-align: center;   /* ✅ centers all text */
+  padding: 25px 20px;
+}
+
+footer .footer-logo {
+  margin-bottom: 12px;
+}
+
+footer .footer-logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+  margin: 0 auto;       /* ✅ centers logo image */
+}
+/* ===== FORCE-CENTER FEATURES SECTION =====
+   Add this at the very end of style.css so it overrides previous rules.
+*/
+
+.plans, .features {
+  display: flex;
+  flex-direction: column;     /* stack heading, text, cards vertically */
+  align-items: center;        /* center everything horizontally */
+  justify-content: flex-start;
+  text-align: center;         /* ensures inline text is centered */
+  padding: 60px 20px;
+  gap: 24px;
+}
+
+/* center heading & description and constrain width for readability */
+.plans h1, .plans h2, .plans p,
+.features h1, .features h2, .features p {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto 18px !important;
+  text-align: center !important;
+  line-height: 1.45;
+}
+
+/* If you have a wrapper that contains the feature cards, center that wrapper */
+.plans .plan-grid, .features .feature-grid, .pricing-cards {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center !important; /* center cards in a row */
+  align-items: flex-start;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* Style for individual cards so text within them is centered */
+.plans .plan, .features .feature, .plan-card, .card {
+  text-align: center !important;
+  margin: 8px;
+}
+
+/* Defensive: if previous rules used float/inline-block, force block layout */
+.plans .plan, .features .feature {
+  display: block !important;
+}
+
+/* Mobile tweak: keep them stacked nicely on small screens */
+@media (max-width: 768px) {
+  .plans .plan-grid, .features .feature-grid, .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .plans, .features {
+    padding: 40px 16px;
+  }
+}
+/* ===== SINGLE PLAN STYLE ===== */
+.single-plan {
+  background: #f4f4f4;
+  padding: 50px 30px;
+  margin: 40px auto;
+  max-width: 600px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.single-plan h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.single-plan p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #28a745;
+  margin-bottom: 25px;
+}
+
+.single-plan span {
+  font-size: 2rem;
+  color: #e63946; /* Highlight price */
+}
+
+.single-plan .btn {
+  background: #28a745;
+  font-size: 1.2rem;
+  padding: 14px 35px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.single-plan .btn:hover {
+  background: #218838;
+  transform: translateY(-3px);
+}
+/* ===== SINGLE BIG PLAN CARD ===== */
+.single-plan {
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  padding: 60px 40px;
+  margin: 60px auto;
+  max-width: 700px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.single-plan:hover {
+  transform: translateY(-8px); /* lift effect */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+}
+
+.single-plan h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #222;
+}
+
+.single-plan .price {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.single-plan .price span {
+  font-size: 2.5rem;
+  color: #28a745; /* highlight ₹59 */
+  font-weight: 900;
+}
+
+.single-plan .btn {
+  background: #28a745;
+  font-size: 1.2rem;
+  padding: 14px 35px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 6px 18px rgba(40, 167, 69, 0.3);
+}
+
+.single-plan .btn:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+/* ===== PROFESSIONAL OFFER CARD ===== */
+.offer-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #ffffff, #f7f9fc);
+  padding: 40px;
+  margin: 60px auto;
+  max-width: 1000px;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  gap: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+}
+
+.offer-image img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.offer-content {
+  flex: 1;
+  text-align: left;
+}
+
+.offer-content h2 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.offer-content .price {
+  font-size: 1.6rem;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.offer-content .price span {
+  font-size: 2.4rem;
+  color: #28a745;
+  font-weight: 900;
+}
+
+.offer-content .desc {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+  color: #555;
+}
+
+.offer-content .btn {
+  background: #28a745;
+  font-size: 1.2rem;
+  padding: 14px 35px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-weight: bold;
+  box-shadow: 0 6px 18px rgba(40, 167, 69, 0.3);
+}
+
+.offer-content .btn:hover {
+  background: #218838;
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .offer-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .offer-content {
+    text-align: center;
+  }
+
+  .offer-image img {
+    max-width: 100%;
+  }
+}
+footer .footer-logo img {
+  height: 50px; 
+  width: auto;
+  display: block;
+  margin: 0 auto 8px;
+  filter: brightness(0) invert(1); /* ✅ makes footer logo white */
+}
+/* ===== Pricing Section ===== */
+.pricing-section {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f9f9f9, #eef2f3);
+}
+
+.pricing-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.pricing-card {
+  max-width: 400px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 40px 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.pricing-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #28a745;
+}
+
+.pricing-card .price {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #111;
+}
+
+.pricing-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.pricing-card ul li {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.pricing-card .btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 35px;
+  font-size: 18px;
+  background: #28a745;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.pricing-card .btn:hover {
+  background: #218838;
+  transform: translateY(-3px);
+}
+/* ===== Section Heading Styling ===== */
+.section-heading {
+  font-size: 2.8rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #222;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.section-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #28a745;   /* green accent underline */
+  border-radius: 2px;
+}
+/* ===== Page Title (Plans Page) ===== */
+.page-title {
+  font-size: 3rem;
+  font-weight: 900;
+  text-align: center;
+  margin: 50px 0 40px;
+  color: #28a745;  /* green brand color */
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+.page-title::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 5px;
+  background: #28a745;
+  border-radius: 3px;
+}
+/* ===== Diet Plans Page Background ===== */
+body.plans-page {
+  background: url("https://images.unsplash.com/photo-1605296867304-46d5465a13f1?auto=format&fit=crop&w=1920&q=80") 
+              no-repeat center center/cover;
+  position: relative;
+  min-height: 100vh;
+  color: white;
+  padding-top: 70px;  /* same as header height */
+}
+
+body.plans-page::before {
+  content: "";
+  position: fixed;   /* cover full viewport */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55);
+  z-index: -1;       /* always behind header and content */
+  pointer-events: none; /* overlay won’t block clicks */
+}
+
+
+
+body.plans-page * {
+  position: relative;
+  z-index: 1; /* ensures content stays above overlay */
+}
+.custom-plan {
+  min-height: 100vh;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #f9f9f9, #e9f7ef);
+  text-align: center;
+}
+
+.custom-plan h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #222;
+}
+
+.custom-plan p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #444;
+}
+
+.custom-plan form {
+  max-width: 600px;
+  margin: 0 auto;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.custom-plan .field {
+  margin-bottom: 20px;
+}
+
+.custom-plan label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.custom-plan select,
+.custom-plan textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+
+.custom-plan button {
+  display: inline-block;
+  margin-top: 15px;
+}
+/* === FIX AUTH PAGE STYLING FOR NEW HTML === */
+.auth-container {
+  min-height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+  padding: 40px 16px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0b3d2e 100%);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.auth-box {
+  width: 100%;
+  max-width: 720px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.25);
+  padding: 28px;
+}
+body.auth-body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.auth-container {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+.auth-box {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+  padding: 30px;
+  text-align: center;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.logo span { color: #27ae60; }
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.tab-btn {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #eee;
+  cursor: pointer;
+  font-weight: 500;
+  border-radius: 8px;
+}
+.tab-btn.active {
+  background: #27ae60;
+  color: #fff;
+}
+
+.tab-content {
+  display: none;
+}
+.tab-content.active {
+  display: block;
+}
+
+.form-group {
+  text-align: left;
+  margin-bottom: 15px;
+}
+.form-group label {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 5px;
+  display: block;
+}
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-primary:hover {
+  background: #219150;
+}
+.auth-container {
+  max-width: 700px;   /* wider card */
+  margin: 50px auto;
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+/* Sliding tab container */
+.auth-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  background: #f1f5f9;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Each button inside */
+.auth-tabs button {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #333;  /* text visible on inactive side */
+  position: relative;
+  z-index: 2; /* keeps text above slider */
+}
+
+/* Active sliding highlight */
+.auth-tabs button.active {
+  color: #fff;  /* ✅ text visible in green section */
+}
+
+/* Sliding background */
+.auth-tabs::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;  /* covers one button */
+  height: 100%;
+  background: #27ae60;
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+/* Move slider to the right when signup is active */
+.auth-tabs.signup-active::before {
+  transform: translateX(100%);
+}
+
+
+.auth-tabs button.active {
+  background: #27ae60;
+  color: #fff;
+}
+
+form {
+  display: none;
+}
+
+form.visible {
+  display: block;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.form-group input {
+  width: 90%;          /* ✅ broader fields */
+  max-width: 600px;    /* ✅ increase max width */
+  margin: 10px auto;   /* ✅ center horizontally */
+  display: block;
+  padding: 14px 18px;  /* ✅ more padding */
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+
+.btn {
+  width: 100%;
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #219150;
+}
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 15px;
+  background: #fff;
+}
+
+.form-group select:focus {
+  border-color: #27ae60;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(39,174,96,0.15);
+}
+/* ---------- Professional Sliding Tabs ---------- */
+.auth-tabs {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  background: #f1f5f9;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 0 auto 25px;   /* centers the box */
+  height: 50px;
+  width: 420px;          /* ⬅️ broader than before */
+  max-width: 90%;        /* responsive for small screens */
+}
+
+
+
+.tab-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  max-width: 600px;   /* ✅ broader sliding button */
+  background: #f3f4f6;
+  border-radius: 14px;
+  overflow: hidden;
+}
+
+
+.tab-container button {
+  flex: 1;
+  padding: 16px 0;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #555;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.tab-container button.active {
+  color: #fff;
+}
+
+.tab-container .tab-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #27ae60;
+  border-radius: 14px;       /* ✅ matches container */
+  transition: transform 0.3s ease;
+  z-index: 0;
+}
+/* === Compact, centered CTAs (Get Started buttons) === */
+#get-started-btn,
+#offer-btn {
+  display: block !important;
+  width: fit-content !important;
+  margin: 14px auto !important;       /* center horizontally */
+  padding: 10px 22px !important;      /* smaller size */
+  font-size: 15px !important;
+  border-radius: 8px !important;
+}
+
+/* In case those buttons also use .btn in hero/offer sections, keep them small */
+.hero .btn,
+.offer-content .btn {
+  padding: 10px 22px !important;
+  font-size: 15px !important;
+  border-radius: 8px !important;
+}
+/* === Make Sign In & Create Account submit buttons smaller + centered === */
+.auth-container form button[type="submit"],
+.auth-container form .btn,
+.auth-container form .btn-primary {
+  display: block !important;
+  width: fit-content !important;   /* shrink to text */
+  margin: 12px auto !important;    /* center horizontally */
+  padding: 10px 22px !important;   /* smaller size */
+  font-size: 15px !important;
+  border-radius: 8px !important;
+}
+/* === Make Buy Now buttons smaller like Get Started === */
+.plans .btn,
+.plan .btn,
+.pricing-card .btn,
+.single-plan .btn,
+.offer-content .btn {
+  display: inline-block !important;
+  padding: 10px 22px !important;   /* smaller height/width */
+  font-size: 15px !important;
+  border-radius: 8px !important;
+  margin: 12px auto !important;
+  width: fit-content !important;   /* shrink to text */
+}
+/* ===== HEADER FIX: keep logo vertically centered ===== */
+#fym {
+  height: 56px !important;                 /* set a fixed, slim header height */
+  display: flex !important;
+  align-items: center !important;          /* vertical centering for children */
+  justify-content: space-between !important;
+  padding: 0 20px !important;              /* equal top/bottom padding */
+}
+
+#fym .logo {
+  display: flex !important;
+  align-items: center !important;          /* center the text inside .logo */
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;               /* prevent text from stretching vertically */
+  /* tiny optical nudge; adjust +/– if needed or remove */
+  transform: translateY(1px);
+}
+
+#fym nav {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+#fym nav a,
+#fym nav button {
+  display: inline-flex !important;         /* make links/buttons align like flex items */
+  align-items: center !important;
+  height: 36px !important;                 /* visually consistent touch target */
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 10px !important;
+  background: none !important;
+  border: 0 !important;
+  color: #fff !important;
+  font-size: 16px!important;
+}
+/* ===== GLOBAL HEADER (same everywhere) ===== */
+header.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #222;
+  color: white;
+  padding: 12px 30px; /* same padding on all pages */
+  height: 56px;       /* fixed height for consistency */
+  box-sizing: border-box;
+}
+
+header.site-header .logo {
+  display: flex !important;
+  align-items: center !important;          /* center the text inside .logo */
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;               /* prevent text from stretching vertically */
+  /* tiny optical nudge; adjust +/– if needed or remove */
+  transform: translateY(1px);
+}
+
+header.site-header .logo span {
+  color: #28a745; /* green highlight */
+}
+
+header.site-header nav{
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+header.site-header nav a,
+header.site-header nav button {
+  display: inline-flex !important;         /* make links/buttons align like flex items */
+  align-items: center !important;
+  height: 36px !important;                 /* visually consistent touch target */
+  line-height: 1 !important;
+  margin: 0 !important;
+  padding: 0 10px !important;
+  background: none !important;
+  border: 0 !important;
+  color: #fff !important;
+  font-size: 16px!important;
+}
+
+/* Fix header overlay issue on Plans page */
+header {
+  position: relative;
+  z-index: 1000;
+}
+
+body.plans-page::before {
+  z-index: -1;
+}
+
+#auth-btn {
+  position: relative;
+  z-index: 2000;
+}
+/* ===== FIX HEADER CLICK ISSUE ===== */
+header {
+  position: relative;  /* make header its own layer */
+  z-index: 9999;       /* keep header above everything */
+}
+.tab-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 12px;
+  background: #f0f0f0;
+  overflow: hidden;
+}
+
+.tab-container button {
+  flex: 1;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  background: transparent;
+  color: #333;
+  z-index: 2; /* keeps text above slider */
+  position: relative;
+  cursor: pointer;
+}
+
+.tab-container .tab-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #27ae60;
+  border-radius: 12px;
+  transition: left 0.2s ease;
+  z-index: 1;
+}
+
+.tab-container button.active {
+  color: #fff; /* white text on green */
+}
+
+.auth-tabs.signup-active .tab-slider {
+  left: 50%; /* move slider to Create Account */
+}
+/* Keep tab text always visible above green slider */
+.auth-tabs .auth-tab,
+.tab-container button {
+  position: relative;
+  z-index: 2 !important;   /* ⬅️ ensures text stays on top of slider */
+  color: #111;             /* default text color */
+}
+
+.auth-tabs .auth-tab.active,
+.tab-container button.active {
+  color: #fff !important;  /* white text on the green slider */
+}
+
+/* Slider stays under the text */
+.auth-tabs .tab-slider,
+.auth-tabs .slider,
+.tab-container .tab-slider {
+  z-index: 1 !important;   /* ⬅️ slider is behind text */
+}
+/* --- Account dropdown: force styles --- */
+header nav .account-menu #account-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  min-width: 180px;
+  padding: 6px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  flex-direction: column;
+  z-index: 10000;
+}
+
+header nav .account-menu #account-dropdown.hidden {
+  display: none;
+}
+
+header nav .account-menu #account-dropdown a {
+  display: block;
+  padding: 10px 14px;
+  color: #111 !important;       /* force black text */
+  background: #fff !important;  /* force white background */
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+header nav .account-menu #account-dropdown a:hover {
+  background: #f3f4f6 !important;
+  color: #000 !important;
+}
+/* ===== Custom Plan Page ===== */
+body.custom-plan-page {
+  background: #f5f6f7;
+}
+
+.cp-wrap {
+  min-height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+  padding: 40px 16px;
+}
+
+.cp-card {
+  width: 100%;
+  max-width: 640px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  padding: 28px;
+}
+
+.cp-title {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 4px 0 18px;
+  color: #111827;
+}
+
+.cp-field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.cp-field label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+#cp-requirement {
+  width: 100%;
+  min-height: 130px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  outline: none;
+  resize: vertical;
+}
+#cp-requirement:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40,167,69,.15);
+}
+
+.cp-btn {
+  width: 100%;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #28a745;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 18px rgba(40,167,69,.3);
+}
+.cp-btn:hover { transform: translateY(-1px); background: #218838; }
+
+.cp-msg { margin-top: 12px; font-size: 0.95rem; }
+.cp-msg.success { color: #15803d; }
+.cp-msg.error   { color: #b91c1c; }
+
+/* Ensure dropdown sits above everything */
+#account-dropdown.dropdown {
+  z-index: 1000;
+}
+/* ===== Custom Plan Page ===== */
+body.custom-plan-page {
+  background: #f5f6f7;
+}
+
+.cp-wrap {
+  min-height: calc(100vh - 70px);
+  display: grid;
+  place-items: center;
+  padding: 40px 16px;
+}
+
+.cp-card {
+  width: 100%;
+  max-width: 640px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  padding: 28px;
+}
+
+.cp-title {
+  text-align: center;
+  font-size: 1.6rem;
+  margin: 4px 0 18px;
+  color: #111827;
+}
+
+.cp-field {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.cp-field label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #111827;
+}
+
+#cp-requirement {
+  width: 100%;
+  min-height: 130px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  outline: none;
+  resize: vertical;
+}
+#cp-requirement:focus {
+  border-color: #28a745;
+  box-shadow: 0 0 0 3px rgba(40,167,69,.15);
+}
+
+.cp-btn {
+  width: 100%;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 10px;
+  background: #28a745;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .2s ease;
+  box-shadow: 0 8px 18px rgba(40,167,69,.3);
+}
+.cp-btn:hover { transform: translateY(-1px); background: #218838; }
+
+.cp-msg { margin-top: 12px; font-size: 0.95rem; }
+.cp-msg.success { color: #15803d; }
+.cp-msg.error   { color: #b91c1c; }
+/* ===== CONTACT PAGE ===== */
+.contact-section {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f9f9f9, #eef2f3);
+  text-align: center;
+}
+
+.contact-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.contact-card {
+  background: #fff;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  width: 250px;
+  transition: transform 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px);
+}
+
+.contact-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #28a745;
+}
+
+.contact-card p a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.contact-card p a:hover {
+  color: #28a745;
+}
+/* Prevents accidental overflow on mobile */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+/* Make images, videos, forms scale to screen */
+img, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Make containers shrink on mobile */
+.container, .auth-container, .auth-card, .auth-box {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box;
+}
+/* === Mobile hamburger (non-desktop safe) === */
+.hamburger {
+  display: none;              /* hidden on desktop */
+  border: 0;
+  background: transparent;
+  padding: 8px;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px 0;
+  background: #111;           /* match your header text color */
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+/* Mobile-only rules */
+@media (max-width: 768px) {
+  .hamburger { display: inline-block; }
+
+  /* Hide nav by default on phones */
+  .site-header #nav-menu {
+    display: none !important;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    border-top: 1px solid #eee;
+    z-index: 1000;
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0;
+  }
+
+  /* Show when toggled */
+  .site-header #nav-menu.open {
+    display: flex !important;
+  }
+
+  /* Full-width touch targets */
+  .site-header #nav-menu a,
+  .site-header #nav-menu button,
+  .site-header #nav-menu .account-menu {
+    width: 100%;
+    text-align: center;
+    padding: 12px 16px;
+    box-sizing: border-box;
+  }
+}
+/* Hide normal nav on small screens */
+@media (max-width: 768px) {
+  .site-header nav {
+    display: none;
+  }
+}
+
+/* Show normal nav on larger screens */
+@media (min-width: 769px) {
+  #fym-hamburger {
+    display: none; /* hide hamburger on desktop */
+  }
+}
+/* Default nav visible on desktop */
+#fym-nav {
+  display: flex;
+  gap: 20px;
+}
+
+/* Hide hamburger on desktop */
+#fym-hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  #fym-hamburger {
+    display: block;
+  }
+
+  #fym-nav {
+    display: none; /* hide nav by default */
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 15px;
+  }
+
+  #fym-nav.show {
+    display: flex; /* show nav when toggled */
+  }
+}
+/* -----------------------------
+   Mobile: hide normal nav, show hamburger
+   Paste this at the BOTTOM of style.css
+   ----------------------------- */
+@media (max-width: 768px) {
+  /* Force-hide all header nav variants */
+  .site-header nav,
+  header nav,
+  .site-header > nav,
+  #fym-nav,
+  #nav-menu,
+  nav#fym-nav,
+  nav#nav-menu {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+  }
+
+  /* Ensure hamburger is visible on mobile */
+  #fym-hamburger,
+  .hamburger,
+  #menu-toggle {
+    display: block !important;
+    z-index: 9999;
+  }
+
+  /* When header has class mobile-open OR nav has .show/open, reveal the nav */
+  .site-header.mobile-open nav,
+  header.mobile-open nav,
+  .site-header nav.show,
+  #fym-nav.show,
+  #nav-menu.open,
+  nav#fym-nav.show,
+  nav#nav-menu.open {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
+    overflow: visible !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #ffffff !important;
+    z-index: 9998 !important;
+    padding: 8px 0 !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08) !important;
+  }
+
+  /* Make menu items full width and visible */
+  .site-header nav a,
+  .site-header nav button,
+  #fym-nav a,
+  #fym-nav button,
+  #nav-menu a,
+  #nav-menu button {
+    display: block !important;
+    width: 100% !important;
+    padding: 12px 16px !important;
+    text-align: center !important;
+    color: #111 !important;
+    text-decoration: none !important;
+    background: transparent !important;
+    border: none !important;
+    box-sizing: border-box !important;
+  }
+}
+@media (max-width: 768px) {
+  .site-header nav { 
+    display: none !important;
+  }
+  #fym-hamburger { 
+    display: block !important; 
+  }
+  .site-header.mobile-open nav {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    z-index: 999;
+  }
+  .site-header nav a,
+  .site-header nav button {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.site-header {
+  display: flex;               /* use flex layout */
+  align-items: center;         /* vertically center items */
+  justify-content: space-between; /* logo on left, nav/hamburger on right */
+  padding: 10px 20px;
+  position: relative;
+  background-color: #fff;      /* or your header color */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+/* Hide hamburger on desktop, show on mobile */
+#fym-hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: none; /* hide normal nav on mobile */
+    position: absolute;
+    top: 60px;   /* below header */
+    right: 0;
+    width: 200px; /* width of mobile menu */
+    background: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    flex-direction: column;
+  }
+
+  nav.mobile-open {
+    display: flex; /* show mobile menu when hamburger clicked */
+  }
+
+  #fym-hamburger {
+    display: block; /* show hamburger on mobile */
+  }
+
+  nav a {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+}
+#fym-hamburger {
+  font-size: 24px !important;   /* make sure size is applied */
+  background: none !important;
+  border: none !important;
+  cursor: pointer !important;
+  color: white !important;      /* <-- force white */
+  z-index: 1000 !important;
+  display: block !important;    /* show on mobile */
+  position: relative;           /* ensure proper stacking */
+}
+/* Hamburger spans (the three lines) */
+.hamburger span {
+  display: block;
+  height: 3px;           /* thickness of the lines */
+  width: 25px;           /* length of the lines */
+  background-color: white; /* <-- this makes lines white */
+  margin: 4px 0;         /* spacing between lines */
+  border-radius: 2px;    /* optional: rounded edges */
+}
+/* Force Sign In / username button in mobile menu to align left */
+#fym-mobile-menu button {
+  text-align: left !important;
+  display: block !important;
+  width: 100% !important;
+  padding: 12px 20px !important;
+  margin: 0 !important;
+}
+#fym-mobile-menu button {
+  font-size: 18px !important;
+  font-weight: 400 !important;
+  font-family: inherit !important;
+  line-height: 1.5 !important;
+  color: #111 !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 15px 25px !important;
+  width: 100% !important;
+  text-align: left !important;
+  box-sizing: border-box !important;
+  cursor: pointer !important;
+}
+/* Prevent horizontal overflow only on small screens */
+@media (max-width: 768px) {
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* only on mobile */
+  }
+  
+  section, div, header, footer {
+    max-width: 100%;  /* use 100% instead of 100vw */
+    box-sizing: border-box;
+  }
+}
+
+/* Apply box-sizing globally */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment • FINDYOURMEAL</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- QR Code Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+  <!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+
+</head>
+<body>
+  <header class="site-header">
+    <div class="logo">FINDYOUR<span>MEAL</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="plans.html">Diet Plans</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="payment-box" style="max-width:400px;margin:60px auto;background:#fff;padding:30px;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.1);text-align:center;">
+      <h2>Complete Your Payment</h2>
+      <p>Pay securely using UPI. Amount: ₹59</p>
+      <canvas id="qrcode"></canvas>
+
+      <!-- Confirmation checkbox -->
+      <div style="margin-top:20px;">
+        <input type="checkbox" id="confirm-payment" style="margin-right:8px;">
+        <label for="confirm-payment" style="color:#333;font-size:0.95rem;">
+          I confirm that I have completed my payment.
+        </label>
+      </div>
+
+      <!-- The button -->
+      <button id="done-btn" 
+        style="margin-top:20px;padding:12px 24px;background:#28a745;color:#fff;border:none;border-radius:8px;cursor:not-allowed;opacity:0.6;display:none;"
+        disabled>
+        I’ve Completed My Payment
+      </button>
+    </section>
+  </main>
+
+  <!-- Firebase (keep these, required for auth) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+  <!-- Your firebase config (must be present and correct) -->
+  <script src="firebase-init.js"></script>
+
+  <!-- If you use script.js for header/auth on other pages, include it so auth button works -->
+  <script src="script.js"></script>
+
+  <!-- EmailJS SDK (only once) -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    (function() {
+      emailjs.init("lQwtkjbUDK_g8fBvf"); // <-- REPLACE with your EmailJS PUBLIC KEY
+    })();
+  </script>
+
+  <!-- Page logic: QR display + button enable + EmailJS send (minimal additions only) -->
+  <script>
+    // Keep the same mobile detection and behavior you had
+    function isMobile() {
+      return /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      // Use query param 'req' (from custom-plan redirect) or localStorage fallback
+      const params = new URLSearchParams(window.location.search);
+      const reqFromQuery = params.get("req");
+      const requirementLS = localStorage.getItem("userRequirement");
+      const req = reqFromQuery || requirementLS || "Custom Plan";
+
+      // Amount (fixed)
+      const amount = params.get("amount") || 59;
+
+      // Your UPI id/name (unchanged)
+      const upiId = "9457757950@fam";
+      const name = "FINDYOURMEAL";
+
+      // Build UPI link exactly as before
+      const upiLink = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(name)}&mc=0000&tid=1234567890&tr=1234567890&tn=${encodeURIComponent(req)}&am=${amount}&cu=INR`;
+
+      // Elements
+      const doneBtn = document.getElementById("done-btn");
+      const confirmBox = document.getElementById("confirm-payment");
+      const qrcanvas = document.getElementById("qrcode");
+
+      // Show QR or open UPI app for mobile — behavior preserved
+      if (isMobile()) {
+        // open UPI app
+        window.location.href = upiLink;
+
+        // when user returns, show checkbox + button
+        setTimeout(() => {
+          if (doneBtn) doneBtn.style.display = "inline-block";
+          if (confirmBox && confirmBox.parentElement) confirmBox.parentElement.style.display = "block";
+        }, 2000);
+      } else {
+        // desktop: generate QR code
+        if (typeof QRious !== "undefined" && qrcanvas) {
+          new QRious({
+            element: qrcanvas,
+            value: upiLink,
+            size: 250
+          });
+        }
+        if (doneBtn) doneBtn.style.display = "inline-block";
+        if (confirmBox && confirmBox.parentElement) confirmBox.parentElement.style.display = "block";
+      }
+
+      // Enable/disable button exactly as before
+      if (confirmBox) {
+        confirmBox.addEventListener("change", () => {
+          if (confirmBox.checked) {
+            doneBtn.disabled = false;
+            doneBtn.style.opacity = "1";
+            doneBtn.style.cursor = "pointer";
+          } else {
+            doneBtn.disabled = true;
+            doneBtn.style.opacity = "0.6";
+            doneBtn.style.cursor = "not-allowed";
+          }
+        });
+      }
+
+      // === EMAIL ACTION: only added here (no other behavior changed) ===
+      if (doneBtn) {
+        doneBtn.addEventListener("click", async (e) => {
+          e.preventDefault();
+
+          // Basic protection: disable button during work
+          doneBtn.disabled = true;
+          const prevText = doneBtn.innerText;
+          doneBtn.innerText = "Processing...";
+
+          try {
+            // Get current firebase user
+            const user = firebase && firebase.auth ? firebase.auth().currentUser : null;
+
+            if (!user) {
+              // if user is not signed in, prompt them (preserves original behavior)
+              alert("Please sign in to confirm payment.");
+              // re-enable and return
+              doneBtn.disabled = false;
+              doneBtn.innerText = prevText;
+              return;
+            }
+
+            // Prepare template parameters for EmailJS
+            const templateParams = {
+              name: (user.displayName && user.displayName !== "") ? user.displayName : (user.email ? user.email.split("@")[0] : "No name"),
+              email: user.email || "",
+              requirement: req || "Not provided"
+            };
+
+            // Send email via EmailJS
+            // <-- Replace SERVICE_ID and TEMPLATE_ID below with your EmailJS values
+            await emailjs.send("service_33dvh4i", "template_sfrs1wa", templateParams);
+
+            // On success redirect (same as your previous flow)
+            window.location.href = "thankyou.html";
+          } catch (err) {
+            console.error("Email send error:", err);
+            alert("Could not send confirmation email. Please try again.");
+
+            // restore button state so user can retry
+            doneBtn.disabled = false;
+            doneBtn.innerText = prevText;
+          }
+        });
+      }
+    });
+  </script>
+  <script src="hamburger.js"></script>
+
+</body>
+</html>

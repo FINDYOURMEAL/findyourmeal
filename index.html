@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FINDYOURMEAL</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+</head>
+<body>
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+  <div class="logo">FINDYOUR<span>MEAL</span></div>
+
+  <!-- ✅ Mobile-only hamburger -->
+  <button id="menu-toggle" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+    <span></span><span></span><span></span>
+  </button>
+
+  <!-- ✅ Add id to nav -->
+  <nav id="nav-menu">
+    <a href="index.html">Home</a>
+    <a href="plans.html">Diet Plans</a>
+    <a href="contact.html">Contact Us</a>
+    <div class="account-menu">
+      <button id="auth-btn">Sign In</button>
+      <div id="account-dropdown" class="dropdown hidden">
+        <a href="plans.html">My Plan</a>
+        <a href="#" id="logout-btn">Logout</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Transform Your Health with Personalized Diet Plans</h1>
+      <p>Get meal plans designed just for you based on your health goals, lifestyle, and preferences.</p>
+      <a href="#" id="get-started-btn" class="btn-primary">Get Started</a>
+    </div>
+  </section>
+<!-- ===== ABOUT / HEALTH SECTION ===== -->
+<section class="about-hero">
+  <div class="about-container">
+    <!-- LEFT SIDE (TEXT) -->
+    <div class="about-text">
+      <h1>Want to Get in Shape Without a Wealthy Budget?</h1>
+      <p>
+        <strong>Here is the solution!</strong>  
+        We believe a healthy lifestyle should be affordable for everyone.  
+        FINDYOURMEAL provides professional yet budget-friendly diet plans designed 
+        for your specific needs — whether you’re aiming for:
+      </p>
+      <ul>
+        <li>✅ Weight Loss</li>
+        <li>✅ Weight Gain</li>
+        <li>✅ Muscle Gain</li>
+        <li>✅ Overall Healthy Lifestyle</li>
+      </ul>
+      <p>
+        Your health is your wealth — let’s change your life, one meal at a time.  
+      </p>
+    </div>
+
+    <!-- RIGHT SIDE (IMAGE) -->
+    <div class="about-image">
+      <img src="diet.jpg">
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING SECTION ===== -->
+<section class="plans">
+  <div class="offer-card">
+    <div class="offer-image">
+      <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Healthy Diet">
+    </div>
+    <div class="offer-content">
+      <h2>Get Your Customized Healthy Diet Plan</h2>
+      <p class="price">Only <span>₹59</span></p>
+      <p class="desc">
+        Whether your goal is <strong>weight loss</strong>, <strong>muscle gain</strong>, or just staying fit — we’ve got you covered with personalized, budget-friendly diet plans.
+      </p>
+      <a href="#" id="offer-btn" class="btn">Get Started</a>
+
+    </div>
+  </div>
+</section>
+
+
+
+  <!-- ================= FEATURES ================= -->
+  <section class="features">
+    <h2>Why Choose FINDYOURMEAL?</h2>
+    <div class="feature-grid">
+      <div class="feature">
+        <h3>Tailored Diet Plans</h3>
+        <p>Plans customized according to your age, weight, height, and goals.</p>
+      </div>
+      <div class="feature">
+        <h3>Easy to Follow</h3>
+        <p>Simple and practical meals for your daily lifestyle.</p>
+      </div>
+      <div class="feature">
+        <h3>Track Your Progress</h3>
+        <p>Stay motivated by tracking your health improvements over time.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="footer-logo">
+      <img src="logo.png" alt="FINDYOURMEAL logo" />
+    </div>
+    <p>&copy; 2025 FINDYOURMEAL. All rights reserved.</p>
+  </footer>
+<!-- Firebase SDKs (compat versions) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-auth-compat.js"></script>
+
+<!-- Your Firebase init file -->
+<script src="firebase-init.js"></script>
+
+<!-- Your site logic -->
+ <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+
+
+  <script src="script.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu    = document.getElementById('nav-menu');
+
+    if (!menuToggle || !navMenu) return;
+
+    // Toggle menu on hamburger click
+    menuToggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      const isOpen = navMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+      // If your account dropdown is open, close it
+      const dd = document.getElementById('account-dropdown');
+      if (dd) dd.classList.add('hidden');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function (e) {
+      if (navMenu.classList.contains('open') &&
+          !navMenu.contains(e.target) &&
+          !menuToggle.contains(e.target)) {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Close menu after clicking any link/button inside it
+    navMenu.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  });
+</script>
+<script>
+(function(){
+  function isMobile() {
+    return window.matchMedia("(max-width: 768px)").matches;
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    if (!isMobile()) return;
+
+    const header = document.querySelector('.site-header') || document.querySelector('header');
+    if (!header) return;
+
+    // find or create hamburger button
+    let hamburger = document.getElementById('hamburger') || document.getElementById('menu-toggle') || header.querySelector('.hamburger') || header.querySelector('.menu-toggle');
+    if (!hamburger) {
+      hamburger = document.createElement('button');
+      hamburger.id = 'fym-hamburger';
+      hamburger.className = 'fym-hamburger';
+      hamburger.setAttribute('aria-label', 'Open menu');
+      hamburger.innerHTML = '&#9776;';
+      const navBefore = header.querySelector('nav');
+      header.insertBefore(hamburger, navBefore || header.firstChild);
+    }
+
+    // create mobile menu container (if not present)
+    let mobileMenu = document.getElementById('fym-mobile-menu');
+    if (!mobileMenu) {
+      mobileMenu = document.createElement('div');
+      mobileMenu.id = 'fym-mobile-menu';
+      header.appendChild(mobileMenu);
+    }
+
+    // inline styles for the mobile menu so it always shows properly
+    Object.assign(mobileMenu.style, {
+      display: 'none',
+      position: 'absolute',
+      top: (header.offsetHeight) + 'px',
+      left: '0',
+      right: '0',
+      background: '#fff',
+      zIndex: 9999,
+      padding: '6px 0',
+      boxShadow: '0 8px 20px rgba(0,0,0,0.12)',
+      maxHeight: (window.innerHeight - header.offsetHeight - 10) + 'px',
+      overflowY: 'auto'
+    });
+
+    // style hamburger slightly so user can see it (won't affect desktop)
+    Object.assign(hamburger.style, {
+  fontSize: '22px',
+  background: 'transparent',
+  border: 'none',
+  cursor: 'pointer',
+  padding: '6px 10px',
+  color: 'white'   // <-- changed to white
+});
+
+
+    // helper: create a visible menu item from a source element
+    function createMenuItemFrom(el) {
+      // if element is an <a>, clone its href/text
+      if (el.tagName === 'A') {
+        const a = document.createElement('a');
+        a.href = el.getAttribute('href') || '#';
+        a.textContent = el.textContent.trim() || el.getAttribute('aria-label') || 'Link';
+        a.style.display = 'block';
+        a.style.padding = '12px 16px';
+        a.style.color = '#111';
+        a.style.textDecoration = 'none';
+        a.style.boxSizing = 'border-box';
+        a.addEventListener('click', () => { mobileMenu.style.display = 'none'; });
+        return a;
+      }
+
+      // if it's a button (like Sign In), create an <a> or <button> that triggers same action if possible
+      if (el.tagName === 'BUTTON') {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.textContent = el.textContent.trim() || 'Action';
+        btn.style.display = 'block';
+        btn.style.padding = '12px 16px';
+        btn.style.width = '100%';
+        btn.style.textAlign = 'center';
+        btn.style.border = 'none';
+        btn.style.background = 'transparent';
+        btn.style.cursor = 'pointer';
+        btn.addEventListener('click', () => {
+          // try to call original button's click handler if present
+          try { el.click(); } catch (e) {}
+          mobileMenu.style.display = 'none';
+        });
+        return btn;
+      }
+
+      // other: attempt to find anchors inside and return first one
+      const found = el.querySelectorAll && el.querySelectorAll('a, button');
+      if (found && found.length) {
+        const wrapper = document.createElement('div');
+        wrapper.style.display = 'block';
+        found.forEach(i => {
+          const item = createMenuItemFrom(i);
+          if (item) wrapper.appendChild(item);
+        });
+        return wrapper;
+      }
+
+      return null;
+    }
+
+    // fill menu from current nav
+    function fillMenu() {
+      mobileMenu.innerHTML = '';
+      const origNav = header.querySelector('nav') || document.querySelector('nav');
+      if (!origNav) return;
+
+      // iterate direct children of nav
+      Array.from(origNav.children).forEach(child => {
+        // skip visually-hidden or empty nodes
+        if (!child.offsetParent && child.getAttribute('aria-hidden') === 'true') return;
+        // create menu items
+        const item = createMenuItemFrom(child) || (child.cloneNode(true));
+        if (item) {
+          // If cloneNode returned an element, ensure its direct anchors/buttons are visible
+          if (item.querySelectorAll) {
+            item.querySelectorAll('a, button').forEach(el => {
+              el.style.display = 'block';
+              el.style.padding = '12px 16px';
+              el.style.color = '#111';
+              el.style.textDecoration = 'none';
+              el.style.background = 'transparent';
+              el.addEventListener('click', () => { mobileMenu.style.display = 'none'; });
+            });
+          }
+          mobileMenu.appendChild(item);
+        }
+      });
+
+      // safety: if menu ended up empty, add fallback links (so user doesn't see blank)
+      if (!mobileMenu.children.length) {
+        const fallback = document.createElement('div');
+        fallback.style.padding = '12px';
+        fallback.style.color = '#111';
+        fallback.textContent = 'Menu is empty — please check header markup.';
+        mobileMenu.appendChild(fallback);
+      }
+    }
+
+    // toggle on click
+    hamburger.addEventListener('click', function (e) {
+      e.stopPropagation();
+      if (mobileMenu.style.display === 'none') {
+        // refresh content each open, in case nav changes
+        fillMenu();
+        mobileMenu.style.display = 'block';
+        hamburger.setAttribute('aria-expanded', 'true');
+      } else {
+        mobileMenu.style.display = 'none';
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // clicking outside closes menu
+    document.addEventListener('click', function (e) {
+      if (mobileMenu.style.display === 'block' && !header.contains(e.target) && e.target !== hamburger) {
+        mobileMenu.style.display = 'none';
+        hamburger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // ensure menu top position updates on resize or orientation change
+    function updateMenuPosition() {
+      mobileMenu.style.top = header.offsetHeight + 'px';
+      mobileMenu.style.maxHeight = (window.innerHeight - header.offsetHeight - 10) + 'px';
+    }
+    window.addEventListener('resize', updateMenuPosition);
+    window.addEventListener('orientationchange', updateMenuPosition);
+
+    // initial position fix
+    updateMenuPosition();
+  });
+})();
+</script>
+
+
+  
+  
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diet Plans • FINDYOURMEAL</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">FINDYOUR<span>MEAL</span></div>
+
+  <!-- Hamburger icon (mobile only) -->
+  <button id="menu-toggle" class="hamburger" aria-label="Open enu" aria-expanded="false">☰</button>
+
+  <!-- Navigation (SAME everywhere) -->
+  <nav>
+  <a href="index.html">Home</a>
+  <a href="plans.html">Diet Plans</a>
+  <a href="contact.html">Contact Us</a>
+  <div class="account-menu">
+      <button id="auth-btn">Sign In</button>
+      <div id="account-dropdown" class="dropdown hidden">
+        <a href="plans.html">My Plan</a>
+        <a href="#" id="logout-btn">Logout</a>
+  </div>
+</nav>
+
+</header>
+
+
+
+
+
+<section class="plans">
+  <h1>Available Diet Plans</h1>
+  <div class="pricing-card">
+    <h3>Customized Healthy Diet Plan</h3>
+    <p class="price">Only ₹59</p>
+    <ul>
+      <li>✔ Personalized for your goals</li>
+      <li>✔ Affordable and Effective</li>
+      <li>✔ Expert Guidance</li>
+    </ul>
+    <a href="#" class="btn get-started-btn" onclick="handleBuyNow()">Buy now</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">
+    <img src="logo.png" alt="FINDYOURMEAL logo" />
+  </div>
+  <p>© 2025 FINDYOURMEAL. All rights reserved.</p>
+</footer>
+
+<!-- Firebase SDKs (compat versions) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore-compat.js"></script> <!-- ✅ Firestore SDK -->
+
+<!-- Your Firebase init file -->
+<script src="firebase-init.js"></script>
+
+<!-- Your site logic -->
+<script src="script.js"></script>
+<script src="hamburger.js"></script>
+
+</body>
+</html>

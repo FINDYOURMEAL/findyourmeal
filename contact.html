@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us • FINDYOURMEAL</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+
+</head>
+<body>
+<header class="site-header">
+  <div class="logo">FINDYOUR<span>MEAL</span></div>
+
+  <!-- Hamburger icon (mobile only) -->
+  <button id="menu-toggle" class="hamburger" aria-label="Open enu" aria-expanded="false">☰</button>
+
+  <!-- Navigation (SAME everywhere) -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="plans.html">Diet Plans</a>
+    <a href="contact.html">Contact Us</a>
+    <div class="account-menu">
+      <button id="auth-btn">Sign In</button>
+      <div id="account-dropdown" class="dropdown hidden">
+        <a href="plans.html">My Plan</a>
+        <a href="#" id="logout-btn">Logout</a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+
+<main class="contact-section">
+  <h1 class="section-heading">Get in Touch</h1>
+
+  <p style="max-width:760px;margin:0 auto;color:#444;font-size:1.05rem;text-align:center;">
+    We’re here to help.If you experience any issue or if you have questions about our diet plans, payments, or need help accessing your account,
+    choose one of the options below — we’ll respond as quickly as possible.
+  </p>
+
+  <div class="contact-cards" style="margin-top:36px;">
+    <div class="contact-card">
+      <h3>Email</h3>
+      <!-- Gmail compose link + contact-link class -->
+      <p>
+        <a class="contact-link"
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=findyourmealhelp@gmail.com&su=Support%20Request&body=Hello%2C%20I%20need%20help%20with..." target="_blank">
+  @FINDYOURMEAL
+</a>
+      </p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Instagram</h3>
+      <p><a class="contact-link" href="https://www.instagram.com/find_yourmeal/" target="_blank" rel="noopener">@FINDYOURMEAL</a></p>
+    </div>
+
+    <div class="contact-card">
+      <h3>Twitter</h3>
+      <p><a class="contact-link" href="https://x.com/FINDYOURMEALFYM" target="_blank" rel="noopener">@FINDYOURMEAL</a></p>
+    </div>
+
+    <div class="contact-card">
+      <h3>YouTube</h3>
+      <p><a class="contact-link" href="https://www.youtube.com/channel/UCyPaMP0QeWf7auMGfLJNpDA" target="_blank" rel="noopener">@FINDYOURMEAL</a></p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-logo">
+    <img src="logo.png" alt="FINDYOURMEAL logo" />
+  </div>
+  <p>© 2025 FINDYOURMEAL. All rights reserved.</p>
+</footer>
+
+<!-- Firebase SDKs (must come first) -->
+<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.3/firebase-firestore-compat.js"></script>
+
+<!-- Your Firebase config -->
+<script src="firebase-init.js"></script>
+
+<!-- Your site logic -->
+<script src="script.js"></script>
+<script src="hamburger.js"></script>
+
+
+</body>
+</html>

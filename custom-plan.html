@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Custom Plan</title>
+
+  <!-- Your global CSS -->
+  <link rel="stylesheet" href="style.css"/>
+
+  <!-- Firebase (Compat) -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+  <script src="firebase-init.js" defer></script>
+
+  <!-- Styles (unchanged) -->
+  <style>
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      padding: 24px;
+      background: #f5f7f8;
+    }
+    .fym-req-card {
+      width: 100%;
+      max-width: 640px;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+      padding: 28px;
+      text-align: center;
+    }
+    .fym-req-card h1 {
+      margin: 0 0 12px 0;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+    #fym-req-form { display:block !important; margin-top: 10px !important; }
+    #fym-req-form label {
+      display:block !important;
+      text-align:left !important;
+      font-weight:600 !important;
+      margin: 8px 0 6px 0 !important;
+      color:#111827 !important;
+    }
+    #fym-req-text {
+      display:block !important;
+      width:100% !important;
+      height:160px !important;
+      padding:12px !important;
+      border:1px solid #d0d7de !important;
+      border-radius:10px !important;
+      font-size:16px !important;
+      background:#fff !important;
+      color:#111827 !important;
+      resize:vertical !important;
+      box-sizing: border-box !important;
+      margin-bottom: 14px !important;
+    }
+    #fym-req-submit {
+      display:inline-block !important;
+      background:#28a745 !important;
+      color:#fff !important;
+      border:none !important;
+      border-radius:8px !important;
+      padding:12px 24px !important;
+      font-size:16px !important;
+      cursor:pointer !important;
+    }
+    #fym-req-submit:hover { background:#218838 !important; }
+    #fym { height: 64px; }
+    #fym .logo { line-height: 64px; }
+    #fym nav a, #fym #auth-btn { line-height: 64px; }
+    .dropdown {
+      position: absolute;
+      right: 0;
+      top: 64px;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.08);
+      border-radius:10px;
+      box-shadow:0 10px 20px rgba(0,0,0,.12);
+      padding:8px;
+      width:180px;
+      z-index: 50;
+    }
+    .dropdown a {
+      display:block;
+      padding:8px 10px;
+      color:#111827;
+      text-decoration:none;
+      border-radius:8px;
+    }
+    .dropdown a:hover { background:#f3f4f6; }
+    .hidden { display:none; }
+  </style>
+  <!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+
+</head>
+<body>
+  <!-- Header -->
+  <header id="fym">
+    <div class="logo">FINDYOUR<span>MEAL</span></div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="plans.html">Diet Plans</a>
+      <a href="contact.html">Contact Us</a>
+    </nav>
+  </header>
+
+  <!-- Content -->
+  <main>
+    <div class="fym-req-card">
+      <h1>Tell Us Your Requirements</h1>
+
+      <form id="fym-req-form">
+        <label for="fym-req-text">Your Requirements</label>
+        <textarea id="fym-req-text" placeholder="Write your diet requirements here..." required></textarea>
+        <button id="fym-req-submit" type="submit">Submit</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- Script -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const form = document.getElementById("fym-req-form");
+
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const text = document.getElementById("fym-req-text").value.trim();
+        if (!text) {
+          alert("⚠️ Please enter your requirements.");
+          return;
+        }
+
+        // ✅ Save requirement locally for later Gmail action
+        localStorage.setItem("userRequirement", text);
+
+        // Always redirect to payment.html with fixed amount 59
+        const params = new URLSearchParams({
+          amount: "59",
+          note: "Custom Plan"
+        });
+
+        window.location.href = "payment.html?" + params.toString();
+      });
+    }
+  });
+  </script>
+  <script src="hamburger.js"></script>
+
+</body>
+</html>
